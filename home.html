@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function checkScreen() {
+	    if(screen.width < 1280 || screen.height < 1024)
+		    alert("스크린 해상도가 낮습니디!");
+      }
+    </script>
+</head>
+<body onload="checkScreen()">
+</body>
+
+  <style>
+    html,body{
+    height:100%;
+    }
+  body{
+    text-align:center;
+  }
+  body:before{
+    content:'';
+    height:100%;
+    display:inline-block;
+    vertical-align:middle;
+  }
+  button{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  button:hover{
+    background:#fff;
+    color:#1AAB8A;
+  }
+  button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+  }
+  button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+</style>
+</head>
+<body>
+  <button class="button" onclick="location.href='p0.html'">입 장</button>
+  <div><p> 모든 HTML언어는 http://jsbeautifier.org 사이트를 통해
+    자동 정렬 되었습니다.</P>
+    <button type="button" onclick="location.href='http://jsbeautifier.org/'">바로가기</button>
+</body>
+</html>

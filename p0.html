@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url(font.css); /*외부에서 css3시트 적용 */
+        @import url(liststyle.css);
+        html { background:url("실습media/p0b1.jpg") /* 전체 배경 적용 */
+        no-repeat center center fixed; /* 배경화면 꽉차게 적용 */
+        background-size: cover; }
+
+        .marquee { /* 10년 전 유행하던 mqrquee 태그 사용 */
+  				width:900px;
+				  padding:0.5em 0;
+  				overflow:hidden;
+  				background-color:none; /* 투명배경 적용 */
+  				margin-bottom:10px;
+  				position:relative;
+				}
+
+			  .marquee p:after {
+  			  content:"";
+  			  white-space:nowrap;
+  			  padding-right:50px;
+			  }
+
+			  .marquee p {
+  			  margin:0;
+  			  padding-left:900px;
+  			  display:inline-block;
+  			  white-space:nowrap;
+
+          animation-name:marquee;
+          animation-timing-function:linear;
+          animation-duration:10s; /* 간격은 10초 =속도 */
+          animation-iteration-count:infinite;
+        }
+
+        @keyframes marquee {
+          from   { transform: translate(0%);}
+          99%,to { transform: translate(-100%);}
+        }
+        .marquee1 { /* 노래 제목에 적용 */
+          width:500px;
+          padding:0.5em 0;
+          overflow:hidden;
+          background-color:none;
+          margin-bottom:10px;
+          position:relative;
+        }
+
+        .marquee1 p:after {
+          content:"";
+          white-space:nowrap;
+          padding-right:50px;
+        }
+
+        .marquee1 p {
+          margin:0;
+          padding-left:300px;
+          display:inline-block;
+          white-space:nowrap;
+
+          animation-name:marquee;
+          animation-timing-function:linear;
+          animation-duration:10s;
+          animation-iteration-count:infinite;
+        }
+
+        @keyframes marquee1 {
+          from   { transform: translate(0%);}
+          99%,to { transform: translate(-100%);}
+        }
+
+      #sw-container { /* 시맨틱 태그 적용 */
+        width: 940px;
+        margin: 10px auto;
+        padding: 20px;
+        border: 4px solid gold;
+        border-radius: 30px; /* 둥근 테두리 적용 */
+        background-color:#ECE0F8; /* 테두리 안쪽에 배경색 적용 */
+      }
+      #sw-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 3px solid black;
+        border-radius: 10px;
+        background-color:#CEF6EC;
+      }
+      #sw-content {
+        width: 580px;
+        height: 600px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 3px ridge black;
+        border-radius: 20px;
+        background-color: #E3CEF6;
+			}
+      #sw-sidebar {
+        width: 240px;
+        padding: 15px;
+        margin-bottom: 20px;
+        float: left; /* 왼쪽으로 일렬되게 정렬 */
+        border: 3px solid black;
+        border-radius: 20px;
+        background-color: #BCA9F5;
+
+			}
+			#sw-sidebar1 {
+        width: 240px;
+        padding: 15px;
+        margin-bottom: 20px;
+        float: left;
+        border: 3px solid black;
+        border-radius: 20px;
+        background-color: #BCA9F5;
+      }
+			#sw-sidebar2 {
+        width: 240px;
+        height: 220px;
+        padding: 15px;
+        margin-bottom: 20px;
+        float: left;
+        border: 3px solid black;
+        background-image: url('실습media/fixkakao.gif'); /*태그 안에 움직이는 gif 파일 적용, 직접 제작 */
+        background-size: 240px 240px;
+        border-radius: 20px;
+      }
+      #sw-sidebar3 {
+          width: 900px;
+          padding: 15px;
+          margin-bottom: 10px;
+          float: left;
+          border: 3px solid black;
+          border-radius: 20px;
+
+			}
+      #sw-footer {
+        clear: both;
+        padding: 10px;
+        border: 3px solid black;
+        border-radius: 20px;
+      }
+      @media ( max-width: 480px ) { /* 윈도우 창 크기가 줄어도 모양 유지 */
+        #sw-container {
+          width: auto;
+        }
+        #sw-content {
+          float: none;
+          width: auto;
+        }
+        #sw-sidebar {
+          float: none;
+          width: auto;
+        }
+			}
+
+    </style>
+</head>
+<div id="sw-container"> <!-- 시맨틱 태그 적용 -->
+    <div id="sw-header"> <!-- id 속성 사용-->
+        <div class="marquee">
+            <p class="sk">취미생활 공유</p> <!-- font.css 적용 -->
+        </div>
+    </div>
+    <div><button type="button" onclick="location.href='p0.html'">홈버튼</button>
+        <!-- onclick시 페이지 이동 -->
+        <button type="button" onclick=history.go(-1)>뒤로가기</button> &nbsp;&nbsp;
+        <!-- 히스토리 명령어 적용 -->
+        </p>
+        <div class="f1">BGM</div> <!-- fonc.css 적용 -->
+        <div class="marquee1">
+            <p class="p0">부활 - 꽃 ♬</p> <audio controls autoplay loop>
+                <source src="실습media/flower.mp3" type="audio/mp3">
+        </div>
+
+    </div><br>
+    <div id="sw-content">
+        <h2>
+            <p class="no"><mark>Profile</mark></p>
+        </h2>
+        <article id="site">
+            <h3>거주지</a></h3>
+            <p>대전에서 태어난 토박이로 아직도 대전 지리를 잘 모르는
+                길치,방향치 입니다. ㅠㅠ 서구 도마동에 살고 있습니다.<br></p>
+        </article>
+        <article id="occupied">
+            <h3>학력</a></h3>
+            <p>한국 수자원공사 앞 와동에 있는 와동국민학교를 3학년까지
+                다니다가 도마동에 있는 도마초등학교-중학교, 대신고등학교,
+                한밭대학교를 졸업했습니다. 군필<br>
+                <button onclick="window.open('실습media/wadong.jpg',
+                    'myWin', 'left=480,top=130,width=460,height=380')">초딩</button>
+                    <!-- 버튼 클릭시 새 윈도우창으로 이미지 출력 -->
+                <button onclick="window.open('실습media/gne.jpg',
+                      'myWin', 'left=480,top=130,width=460,height=380')">그네</button>
+                <button onclick="window.open('실습media/old.jpg',
+                        'myWin', 'left=480,top=130,width=600,height=380')">추억</button><br>
+            </p>
+        </article>
+        <article id="blood">
+            <h3>신체프로필</h3>
+            <p>키 178, 몸무게 90(실연의 충격), 혈핵형 AB형(또라이 아님ㅠㅠ)<br></p>
+        </article>
+        <article id="hobby">
+            <h3>취미?</h3>
+            <p>노래 부르기, (소)동물키우기<button onclick="window.open('실습media/ham.png',
+                  'myWin', 'left=480,top=130,width=570,height=420')">햄톨</button><button onclick="window.open('실습media/seri.png',
+                    'myWin', 'left=480,top=130,width=570,height=420')">세리</button>, 걷기<br></p>
+
+        </article>
+    </div>
+    <div id="sw-sidebar">
+        <h3>간단한 Proflie</h3>
+        <ul>
+            <li><a href="#site">거주지</a></li> <!-- list style적용 -->
+            <li><a href="#occupied">학력</a></li> <!--앵커를 사용한 단락 이동 -->
+            <li><a href="#blood">신체프로필.혈핵형</a></li>
+            <li><a href="#hobby">취미?</a></li>
+        </ul>
+    </div>
+    <div id="sw-sidebar1">
+        <h3>
+            <p class="f3">취미생활</p>
+        </h3>
+        <ul>
+            <li><a href="p1.html">드라이브</a></li> <!-- 앵커의 링크 기능 사용- 페이지 이동 -->
+            <li><a href="p2.html">수집가</a></li>
+            <li><a href="p3.html">여행지</a></li>
+            <li><a href="p4.html">1인 방송시대</a></li>
+        </ul>
+    </div>
+    <div id="sw-sidebar2">
+    </div>
+    <div id="sw-sidebar3">
+
+        <body onload="init()">
+            <h3>방명록</h3>
+            <canvas id="myCanvas" style="background-color:#A9D0F5" width="800" height="160">
+            </canvas> <!-- 캔버스 태그를 활용한 그리기 기능 추가 -->
+            <script>
+                var canvas, context; //전역 변수
+  		function init() {
+  		canvas = document.getElementById("myCanvas");
+  		context = canvas.getContext("2d");
+
+  		context.lineWidth = 1; // 선굵기는 1
+  		context.strokeStyle = "blue"; //기본색상
+
+  		canvas.addEventListener("mousemove", function (e) { move(e) }, false);
+  		canvas.addEventListener("mousedown", function (e) { down(e) }, false);
+  		canvas.addEventListener("mouseup", function (e) { up(e) }, false);
+  		canvas.addEventListener("mouseout", function (e) { out(e) }, false);
+  	  }
+
+  	var startX=0, startY=0; //마우스의 마지막 포인터 좌표
+  	var dragging=false;
+  	function draw(curX, curY) {
+  		context.beginPath();
+  		context.moveTo(startX, startY);
+  		context.lineTo(curX, curY);
+  		context.stroke();
+  	  }
+  	function down(e) { //e는 마우스 이벤트 객체
+  		startX = e.offset; startY = e.offsetY; dragging = true;
+  	  }
+  	function up(e) { dragging = false;}
+  	function move(e) {
+  		if(!dragging) return;
+  		var curX = e.offsetX, curY = e.offsetY;
+  		draw(curX, curY);
+  		startX = curX; startY = curY;
+  	  }
+  	function out(e) { dragging = false;}
+    function erase() {
+	    var canvas = document.getElementById("myCanvas");
+	    var context = canvas.getContext("2d");
+	      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+</script>
+            <br>
+            <input type="button" id="hw" value="submit" />
+            <script type="text/javascript" src="script2.js"></script>
+             <!-- submit 버튼 누를시 외부 js 적용으로 인한 alert 작동 -->
+            <button type="button" onclick="erase()">지우기</button> <!--지우기 함수 추가 -->
+            <input type="color" id="colorInput" value="#00ffff" onchange="context.strokeStyle=this.value">
+            <!-- 그리기 색상 선택 가능 -->
+
+    </div>
+    <div id="sw-footer">
+        <p>Copyright Woong</p>
+
+
+    </div>
+</div>
+</div>
+</body>
+
+</html>
